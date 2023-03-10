@@ -1,0 +1,48 @@
+{
+  "name": "global-conf",
+  "version": "1.0.1",
+  "description": "Global configuration API",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha",
+    "fmt": "eslint --fix './*.js' './**/*.js' './*.json' './**/*.json'"
+  },
+  "author": "Richard S Allinson",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.26.0",
+    "eslint-plugin-json": "^3.1.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "yaml": "^2.2.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary",
+      "html"
+    ],
+    "exclude": [
+      "**/*.mocha.js"
+    ],
+    "report-dir": "./artifacts/coverage/",
+    "statements": 100,
+    "branches": 100,
+    "functions": 100,
+    "lines": 100
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricallinson/global-conf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ricallinson/global-conf/issues"
+  },
+  "homepage": "https://github.com/ricallinson/global-conf#readme"
+}
